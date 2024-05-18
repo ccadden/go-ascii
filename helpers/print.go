@@ -12,18 +12,20 @@ func PrintTable() {
 		PrintRow(i)
 	}
 	fmt.Println()
+	PrintSep()
+	fmt.Println()
 }
 
 func PrintHeader() {
-	fmt.Printf("|------|------|------|--------|--------|")
-	fmt.Printf("\n|%6s|%6s|%6s|%8s|%8s|", "SYM", "DEC", "HEX", "BIN", "OCT")
-	fmt.Printf("\n|------|------|------|--------|--------|")
+	PrintSep()
+	fmt.Printf("\n|%5s|%5s|%5s|%8s|%5s|\n", "SYM", "DEC", "HEX", "BIN", "OCT")
+	PrintSep()
 }
 
 func PrintRow[T Char](i T) {
-	fmt.Printf("\n|%6c|%6v|%6X|%8b|%8o|", i, i, i, i, i)
+	fmt.Printf("\n|%5c|%5v|%5X|%8b|%5o|", i, i, i, i, i)
 }
 
-func PrintFooter() {
-	fmt.Printf("\n|------|------|------|--------|--------|\n")
+func PrintSep() {
+	fmt.Printf("|-----|-----|-----|--------|-----|")
 }
